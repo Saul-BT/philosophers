@@ -28,7 +28,7 @@ $ ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_o
 
 - [x] Add a `README.md` file
 - [x] Add a `main.c` file
-- [ ] Create a Makefile
+- [x] Create a Makefile
 - [ ] Handle errors
 - [ ] Parse the command line arguments
 - [ ] Implement the basic logic
