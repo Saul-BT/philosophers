@@ -1,0 +1,8 @@
+# Compilation stuff
+*.o
+*.a
+*.so
+*.out
+
+# Executables
+philo
