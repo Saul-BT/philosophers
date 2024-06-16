@@ -1,3 +1,6 @@
+# Editor config
+.vscode
+
 # Compilation stuff
 *.o
 *.a
