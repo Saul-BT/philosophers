@@ -6,7 +6,7 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 12:16:49 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 13:25:31 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:08:50 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void				*secure_malloc(size_t size);
 void				exit_error(char *msg);
 
 // From mutex.c
-void				mutex_init(void);
+void				*mutex_create(void);
 void				mutex_destroy(t_mutex *mutex);
 void				mutex_lock(t_mutex *mutex);
 void				mutex_unlock(t_mutex *mutex);
