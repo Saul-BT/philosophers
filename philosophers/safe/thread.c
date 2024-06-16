@@ -6,7 +6,7 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 12:16:12 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 13:23:22 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 19:39:19 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@
  */
 pthread_t	thread_create(void *(*routine)(void *), void *arg)
 {
-	int			ret;
 	pthread_t	thread;
 
-	ret = pthread_create(&thread, NULL, routine, arg);
-	if (!!ret)
+	if (!!pthread_create(&thread, NULL, routine, arg))
 		exit_error("pthread_create");
 	return (thread);
 }
@@ -36,9 +34,6 @@ pthread_t	thread_create(void *(*routine)(void *), void *arg)
  */
 void	thread_join(pthread_t thread)
 {
-	int	ret;
-
-	ret = pthread_join(thread, NULL);
-	if (!!ret)
+	if (!!pthread_join(thread, NULL))
 		exit_error("pthread_join");
 }

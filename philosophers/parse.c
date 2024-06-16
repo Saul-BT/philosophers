@@ -6,7 +6,7 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 12:32:18 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 13:35:28 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:37:50 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ static int	ft_atoi(const char *str)
 	numeric = get_valid_num_str(str);
 	while (is_digit(*numeric))
 	{
-		printf("numeric: %d\n", *numeric);
 		if (result > INT_MAX)
 			exit_error("Error: numbers greater than INT_MAX not allowed");
 		result = result * 10 + *(numeric++) - '0';
@@ -80,9 +79,9 @@ void	parse_input(int argc, char **args, t_table *table)
 {
 	table->max_eat_count = -1;
 	table->philo_count = ft_atoi(args[0]);
-	table->time_to_die = ft_atoi(args[1]) * 1e3;
-	table->time_to_eat = ft_atoi(args[2]) * 1e3;
-	table->time_to_sleep = ft_atoi(args[3]) * 1e3;
+	table->time_to_die = ft_atoi(args[1]);
+	table->time_to_eat = ft_atoi(args[2]);
+	table->time_to_sleep = ft_atoi(args[3]);
 	if (argc == 5)
 		table->max_eat_count = ft_atoi(args[4]);
 }
