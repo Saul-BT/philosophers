@@ -6,7 +6,7 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:03:15 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 14:44:20 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 19:48:24 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static void	init_forkless_philo(int id, t_philo *philo)
 {
 	philo->id = id;
 	philo->eat_count = 0;
-	philo->last_eat_time = 0;
+	philo->last_eat_time = get_time();
+	philo->alive = true;
 }
 
 /**
@@ -44,6 +45,7 @@ void	init_data(t_table *table)
 	int	i;
 
 	i = 0;
+	table->print_mutex = mutex_create();
 	table->forks = secure_malloc(sizeof(t_fork) * table->philo_count);
 	table->philos = secure_malloc(sizeof(t_philo) * table->philo_count);
 	while (i < table->philo_count)
@@ -53,6 +55,7 @@ void	init_data(t_table *table)
 		table->philos[i].left_fork = &table->forks[i];
 		table->philos[i].right_fork = &table->forks[(i + 1)
 			% table->philo_count];
+		table->philos[i].table = table;
 		i++;
 	}
 }
