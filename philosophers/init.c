@@ -6,18 +6,28 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:03:15 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 14:40:16 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:44:20 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+/**
+ * \brief		Initialize a fork
+ * \param[in]	id: The id of the fork
+ * \param[out]	fork: The fork to initialize
+ */
 static void	init_fork(int id, t_fork *fork)
 {
 	fork->id = id;
 	fork->mutex = mutex_create();
 }
 
+/**
+ * \brief		Initialize a forkless philosopher
+ * \param[in]	id: The id of the philosopher
+ * \param[out]	philo: The philosopher to initialize
+ */
 static void	init_forkless_philo(int id, t_philo *philo)
 {
 	philo->id = id;
@@ -25,6 +35,10 @@ static void	init_forkless_philo(int id, t_philo *philo)
 	philo->last_eat_time = 0;
 }
 
+/**
+ * \brief		Initialize the philos and forks data
+ * \param[in]	table: The table to initialize
+ */
 void	init_data(t_table *table)
 {
 	int	i;
