@@ -6,7 +6,7 @@
 /*   By: sblanco- <sblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 09:22:36 by sblanco-          #+#    #+#             */
-/*   Updated: 2024/06/16 13:26:11 by sblanco-         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:02:14 by sblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ struct					s_table
 	t_us				time_to_eat;
 	t_us				time_to_sleep;
 	t_philo				*philos;
+	t_fork				*forks;
 };
 
 struct					s_fork
