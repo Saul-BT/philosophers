@@ -60,6 +60,7 @@ struct					s_philo
 
 void					parse_input(int argc, char **args, t_table *table);
 void					init_data(t_table *table);
+void					start_hunger_game(t_table *table);
 
 // From time.c
 t_ms					get_time(void);
