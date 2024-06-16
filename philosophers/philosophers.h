@@ -65,4 +65,7 @@ void					init_data(t_table *table);
 t_ms					get_time(void);
 void					wait(t_ms ms);
 
+// From util.c
+void					print_message(t_philo philo, char *message);
+
 #endif
