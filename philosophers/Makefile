@@ -1,9 +1,9 @@
 NAME = philo
-SOURCES = main.c parse.c
+SOURCES = main.c parse.c init.c time.c util.c simulation.c
 SOURCES += safe/alloc.c safe/mutex.c safe/thread.c safe/util.c
 
 CC = gcc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
