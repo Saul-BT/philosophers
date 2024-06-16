@@ -1,5 +1,6 @@
 NAME = philo
-SOURCES = main.c
+SOURCES = main.c parse.c
+SOURCES += safe/alloc.c safe/mutex.c safe/thread.c safe/util.c
 
 CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror
@@ -17,4 +18,6 @@ fclean: clean
 	@echo "Cleaning executable"
 	@rm -f $(NAME)
 
-.PHONY: all clean fclean
+re: fclean all
+
+.PHONY: all clean fclean re
